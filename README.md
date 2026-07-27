@@ -42,8 +42,7 @@ This project proposes a **5-phase AI framework** that combines **Machine Learnin
 
 ```text
 98 Clinics
-      │
-      ▼
+      ↓
 Phase 1  → Strategic Profiling
       ↓
 Phase 2  → Patient Demand Forecasting
