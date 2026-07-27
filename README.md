@@ -7,7 +7,6 @@
 ![XGBoost](https://img.shields.io/badge/XGBoost-ML-green)
 ![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red)
 ![Gemini](https://img.shields.io/badge/Gemini-2.5%20Flash-orange)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 ---
 
@@ -45,25 +44,17 @@ This project proposes a **5-phase AI framework** that combines **Machine Learnin
 98 Clinics
       │
       ▼
-K-Means Strategic Clustering
-      │
-      ▼
-Patient Demand Forecasting
-      │
-      ▼
-Physics-Constrained Wait Time Simulation
-      │
-      ▼
-High-Risk Crisis Detection
-      │
-      ▼
-SHAP Explainability
-      │
-      ▼
-Gemini AI Assistant
-      │
-      ▼
-Staff Reallocation Recommendation
+Phase 1  → Strategic Profiling
+      ↓
+Phase 2  → Patient Demand Forecasting
+      ↓
+Phase 3  → Wait Time Simulation
+      ↓
+Phase 4  → Crisis Detection
+      ↓
+Phase 5  → Future Inference (7-Day Forecast)
+      ↓
+Gemini AI Assistant (Decision Support Layer)
 ```
 
 ---
@@ -82,7 +73,7 @@ Staff Reallocation Recommendation
 
 - XGBoost Regressor
 - Walk-forward validation
-- 7-day rolling prediction
+- 7-day rolling prediction of patient arrivals
 
 ---
 
@@ -104,34 +95,41 @@ High-sensitivity classifier optimized using an asymmetric decision threshold.
 
 Objectives:
 
-- Detect operational bottlenecks early
-- Reduce missed critical cases
-- Minimize alert fatigue
+- Detect potential operational bottlenecks
+- Identify high-risk periods before they occur
+- Minimize missed critical cases while reducing alert fatigue
 
 ---
 
-## Phase 5 — AI Decision Support
+## Phase 5 — Future Inference
 
-A Gemini 2.5 Flash agent converts technical model outputs into natural language reports for clinic managers.
+The trained framework generates a **7-day operational forecast** for each clinic, allowing managers to proactively plan resources before bottlenecks occur.
 
-The assistant provides:
+Predicted outputs include:
 
-- Daily operational summaries
-- Staffing recommendations
-- Root cause explanations
-- Resource allocation suggestions
+- 👥 Daily patient volume
+- ⏱️ Expected average waiting time
+- 👨‍⚕️ Recommended staff count
+
+The future inference module provides clinic managers with an operational outlook, enabling proactive staffing decisions and better resource allocation across the clinic network.
 
 ---
 
-# 🧠 Explainable AI (XAI)
+# 🤖 AI Decision Support
 
-Instead of producing black-box predictions, the framework uses **SHAP Waterfall Analysis** to explain:
+To improve interpretability and usability, the framework integrates **Gemini 2.5 Flash** as an AI decision-support assistant.
 
-- Which features increased waiting time
-- Which variables reduced waiting time
-- Why a clinic is predicted to become overloaded
+Rather than generating predictions, the LLM interprets model outputs and presents them in a concise, manager-friendly format.
 
-This allows healthcare managers to trust and validate AI decisions.
+Capabilities include:
+
+- 📋 Daily operational summaries
+- 💬 Natural language data queries
+- 🔍 SHAP-based root cause explanations
+- 👨‍⚕️ AI-assisted staffing recommendations
+- 📊 Human-readable reports for clinic managers
+
+To ensure factual consistency, the assistant adopts a **Table-Augmented Generation (TAG)** approach with prompt sandboxing, preventing unsupported or hallucinated recommendations.
 
 ---
 
@@ -225,5 +223,3 @@ Interested in:
 - LLM Applications
 
 ---
-
-## ⭐ If you found this project interesting, please consider giving it a star.
