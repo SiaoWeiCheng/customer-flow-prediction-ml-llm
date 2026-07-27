@@ -1,57 +1,229 @@
 # customer-flow-prediction-ml-llm
-Customer Flow Prediction using Machine Learning and Large Language Models (Final Year Project)
+# 🏥 Customer Flow Prediction Using Machine Learning & Large Language Models (FYP)
 
-📌 Project Overview  
-This repository contains a data-driven, sequential AI framework designed to optimize patient flow and resource allocation across a network of 98 private clinics.
+> An end-to-end AI framework for predicting patient demand, optimizing clinic operations, and generating explainable staffing recommendations across a network of **98 private clinics**.
 
-Existing healthcare predictive models often suffer from a "cold start" problem for new facilities, fail to generalize across diverse clinic profiles, and operate as "black boxes" that clinic managers struggle to trust. This project solves these limitations by combining K-Means clustering, physics-informed XGBoost forecasting, and a Gemini-powered LLM agent to transform complex numerical predictions into safe, actionable staff reallocation strategies.
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![XGBoost](https://img.shields.io/badge/XGBoost-ML-green)
+![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red)
+![Gemini](https://img.shields.io/badge/Gemini-2.5%20Flash-orange)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
-🚀 Key Architectural Contributions  
-Overcoming the "Cold Start" Problem (Transfer Learning): Engineered a K-Means clustering pipeline to group the 98 clinics into a Strategic 4-Quadrant Matrix. New clinics with zero historical data are assigned an operational profile, allowing the system to accurately predict demand on Day 1.
+---
 
-Physics-Informed Monotonic Constraints: Hard-coded queuing theory principles into the XGBoost wait-time simulator. The model is mathematically restricted from making illogical predictions (e.g., forecasting longer wait times when staff capacity increases).
+## 📌 Project Overview
 
-Prescriptive Explainable AI (XAI): Integrated SHAP (SHapley Additive exPlanations) Waterfall diagnostics to isolate the root cause of predicted bottlenecks.
+Healthcare providers often struggle to accurately predict patient demand, especially for **new clinics with little or no historical data**.
 
-Zero-Hallucination LLM Integration: Developed an AI Data Assistant using Gemini 2.5 Flash and Table-Augmented Generation (TAG). Enforced strict Prompt Sandboxing to guarantee the LLM acts purely as a prescriptive data formatter with a 100% Factual Consistency Rate.
+Traditional forecasting models also suffer from:
 
-🛠️ Technology Stack  
-Machine Learning: XGBoost (Regressor & Classifier), Scikit-Learn, K-Means Clustering, SHAP
+- ❌ Cold-start problems for new facilities
+- ❌ Poor generalization across different clinic profiles
+- ❌ Black-box predictions that managers cannot easily interpret
 
-Large Language Models: Gemini 2.5 Flash API (Optimized for massive context window and low latency)
+This project proposes a **5-phase AI framework** that combines **Machine Learning**, **Explainable AI (XAI)**, and **Large Language Models (LLMs)** to deliver accurate forecasts together with human-readable operational recommendations.
 
-Data Processing: Python, Pandas, NumPy
+---
 
-Frontend Dashboard: Streamlit
+## ✨ Key Features
 
-⚙️ The 5-Phase Sequential Pipeline  
-Strategic Profiling: K-Means stratification of network dynamics.
+- 📈 Patient arrival forecasting
+- ⏱️ Wait-time prediction using physics-informed machine learning
+- 🏥 Automatic clinic profiling with K-Means clustering
+- 🔍 SHAP Explainable AI diagnostics
+- 🤖 Gemini-powered AI assistant
+- 📊 Interactive Streamlit dashboard
+- 📋 AI-generated staffing recommendations
 
-Demand Forecasting: 7-day rolling walk-forward validation for patient arrivals.
+---
 
-Wait Time Simulation: Physics-constrained simulation of patient flow.
+# 🏗️ System Architecture
 
-Crisis Detection: High-sensitivity classification optimized via an Asymmetric Cost Threshold.
+> *(Insert your architecture diagram here)*
 
-Agentic Strategy Generation: LLM-driven reporting translating SHAP diagnostics into staffing solutions.
+```text
+98 Clinics
+      │
+      ▼
+K-Means Strategic Clustering
+      │
+      ▼
+Patient Demand Forecasting
+      │
+      ▼
+Physics-Constrained Wait Time Simulation
+      │
+      ▼
+High-Risk Crisis Detection
+      │
+      ▼
+SHAP Explainability
+      │
+      ▼
+Gemini AI Assistant
+      │
+      ▼
+Staff Reallocation Recommendation
+```
 
-📊 Evaluation & Results  
-The framework was rigorously evaluated on historical clinic data:
+---
 
-Wait Time Simulation: Achieved a Mean Absolute Error (MAE) of 2.41 minutes.
+# ⚙️ AI Pipeline
 
-Demand Forecasting: Achieved an average RMSE of 6.85, significantly outperforming baseline ARIMA and Prophet models.
+## Phase 1 — Strategic Profiling
 
-High-Risk Crisis Detection: Achieved an 87% Recall and 0.95 ROC-AUC. The operating point was mathematically optimized to a 0.368 threshold using the Precision-Recall curve to prioritize patient safety without causing severe alert fatigue.
+- K-Means clustering
+- Strategic 4-Quadrant Matrix
+- Cold-start solution for new clinics
 
-💻 Dashboard Interface  
-The system features a live Streamlit application serving as the clinic manager's control panel:
-🔮 Next Week Forecast: View simulated future demand and wait times.
-📜 Historical Analysis: Compare AI predictions against ground-truth baselines.
-🌍 Strategic Clusters: View the operational topology of the 98-clinic network.
+---
 
-📝 AI Strategic Report: Generate automated morning briefings aggregating 7-day forecasts.
+## Phase 2 — Demand Forecasting
 
-💬 AI Data Assistant: Query complex operational metrics using natural language.
+- XGBoost Regressor
+- Walk-forward validation
+- 7-day rolling prediction
 
-🛠️ AI Crisis Resolution: View flagged bottlenecks, SHAP root-cause analysis, and AI-generated staff reallocation strategies.
+---
+
+## Phase 3 — Wait Time Simulation
+
+Physics-informed XGBoost model with monotonic constraints to ensure logically consistent predictions.
+
+Example:
+
+✅ More staff → Shorter waiting time
+
+❌ More staff → Longer waiting time
+
+---
+
+## Phase 4 — Crisis Detection
+
+High-sensitivity classifier optimized using an asymmetric decision threshold.
+
+Objectives:
+
+- Detect operational bottlenecks early
+- Reduce missed critical cases
+- Minimize alert fatigue
+
+---
+
+## Phase 5 — AI Decision Support
+
+A Gemini 2.5 Flash agent converts technical model outputs into natural language reports for clinic managers.
+
+The assistant provides:
+
+- Daily operational summaries
+- Staffing recommendations
+- Root cause explanations
+- Resource allocation suggestions
+
+---
+
+# 🧠 Explainable AI (XAI)
+
+Instead of producing black-box predictions, the framework uses **SHAP Waterfall Analysis** to explain:
+
+- Which features increased waiting time
+- Which variables reduced waiting time
+- Why a clinic is predicted to become overloaded
+
+This allows healthcare managers to trust and validate AI decisions.
+
+---
+
+# 🛠 Technology Stack
+
+| Category | Technologies |
+|-----------|--------------|
+| Programming | Python |
+| Machine Learning | XGBoost, Scikit-Learn |
+| Clustering | K-Means |
+| Explainable AI | SHAP |
+| LLM | Gemini 2.5 Flash |
+| Data Processing | Pandas, NumPy |
+| Dashboard | Streamlit |
+
+---
+
+# 📊 Results
+
+| Task | Performance |
+|------|-------------|
+| Patient Demand Forecasting | RMSE = **6.85** |
+| Wait Time Prediction | MAE = **2.41 minutes** |
+| Crisis Detection | Recall = **87%** |
+| ROC-AUC | **0.95** |
+
+### Highlights
+
+- ✅ Outperformed baseline ARIMA models
+- ✅ Outperformed Prophet forecasting
+- ✅ Cold-start prediction for new clinics
+- ✅ Explainable AI with SHAP
+- ✅ Zero-hallucination LLM integration
+
+---
+
+# 💻 Dashboard
+
+The Streamlit dashboard provides:
+
+- 🔮 Next-week forecasting
+- 📜 Historical performance analysis
+- 🌍 Strategic cluster visualization
+- 📈 Interactive operational dashboard
+- 💬 AI Data Assistant
+- 🛠 AI Crisis Resolution
+
+---
+
+# 📂 Repository Structure
+
+```text
+customer-flow-prediction-ml-llm
+│
+├── data/
+├── notebooks/
+├── src/
+├── models/
+├── images/
+├── results/
+├── requirements.txt
+└── README.md
+```
+
+---
+
+# 🚀 Future Improvements
+
+- Real-time IoT integration
+- Multi-hospital deployment
+- Reinforcement learning for staff scheduling
+- Cloud deployment with Docker
+- MLOps pipeline automation
+
+---
+
+# 👨‍💻 Author
+
+**Siao Wei Cheng**
+
+Bachelor of Computer Science (Data Science)
+
+Multimedia University (MMU)
+
+Interested in:
+
+- Machine Learning
+- Data Science
+- Artificial Intelligence
+- Explainable AI
+- LLM Applications
+
+---
+
+## ⭐ If you found this project interesting, please consider giving it a star.
