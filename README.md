@@ -222,3 +222,10 @@ Interested in:
 - LLM Applications
 
 ---
+
+## 🚀 How to Run Locally
+1. Clone the repository: `git clone https://github.com/yourusername/your-repo-name.git`
+2. Install the required dependencies: `pip install -r requirements.txt`
+3. Launch the dashboard: `streamlit run src/app.py`
+
+---
