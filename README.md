@@ -70,7 +70,7 @@ Gemini AI Assistant (Decision Support Layer)
 
 ## Phase 2 — Demand Forecasting
 
-- XGBoost Regressor
+- XGBoost/ARIMA/Prophet
 - Walk-forward validation
 - 7-day rolling prediction of patient arrivals
 
@@ -137,7 +137,7 @@ To ensure factual consistency, the assistant adopts a **Table-Augmented Generati
 | Category | Technologies |
 |-----------|--------------|
 | Programming | Python |
-| Machine Learning | XGBoost, Scikit-Learn |
+| Machine Learning | XGBoost, ARIMA, Prophet, Scikit-Learn |
 | Clustering | K-Means |
 | Explainable AI | SHAP |
 | LLM | Gemini 2.5 Flash |
