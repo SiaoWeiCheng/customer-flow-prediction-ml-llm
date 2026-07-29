@@ -226,6 +226,7 @@ Interested in:
 ## 🚀 How to Run Locally
 1. Clone the repository: `git clone https://github.com/SiaoWeiCheng/customer-flow-prediction-ml-llm.git`
 2. Install the required dependencies: `pip install -r requirements.txt`
-3. Launch the dashboard: `streamlit run src/app.py`
+3. Download the datasets and move them in the data folder.
+4. Launch the dashboard: `streamlit run src/app.py`
 
 ---
