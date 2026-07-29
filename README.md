@@ -176,6 +176,10 @@ The Streamlit dashboard provides:
 - 💬 AI Data Assistant
 - 🛠 AI Crisis Resolution
 
+<p align="center">
+  <img src="images/Streamlit Application.png" alt="Streamlit Dashboard" width="900"/>
+</p>
+
 ---
 
 # 📂 Repository Structure
